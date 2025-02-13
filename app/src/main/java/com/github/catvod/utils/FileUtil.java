@@ -40,7 +40,7 @@ public class FileUtil {
                     parent.mkdirs();
                 }
                 // 将文件内容复制到目标路径
-                Path.copy(zip.getInputStream(entry), out.toPath());
+                Path.copy(zip.getInputStream(entry), out);
             }}
         } catch (Exception e) {
             e.printStackTrace();
