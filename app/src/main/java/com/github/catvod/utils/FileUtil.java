@@ -41,7 +41,7 @@ public class FileUtil {
                 }
                 // 将文件内容复制到目标路径
                 Files.copy(zip.getInputStream(entry), out.toPath());
-            }
+            }}
         } catch (Exception e) {
             e.printStackTrace();
         }
