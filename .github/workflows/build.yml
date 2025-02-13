@@ -26,17 +26,6 @@ jobs:
         run: |
           ./build.bat
 
-
-      - name: Remove old JAR files
-        run: |
-          del jar\custom_spider.jar
-          del jar\custom_spider.jar.md5
-
-      - name: Move new JAR files
-        run: |
-          move custom_spider.jar jar\custom_spider.jar
-          move custom_spider.jar.md5 jar\custom_spider.jar.md5
-
       - name: Commit JAR files
         run: |
           git config --global user.name 'github-actions[bot]'
