@@ -25,3 +25,24 @@ jobs:
       - name: Run build script
         run: |
           ./build.bat
+
+
+      - name: Remove old JAR files
+        run: |
+          del jar\custom_spider.jar
+          del jar\custom_spider.jar.md5
+
+      - name: Move new JAR files
+        run: |
+          move custom_spider.jar jar\custom_spider.jar
+          move custom_spider.jar.md5 jar\custom_spider.jar.md5
+
+      - name: Commit JAR files
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add jar/custom_spider.jar jar/custom_spider.jar.md5
+          git commit -m 'Update generated custom_spider.jar and custom_spider.jar.md5'
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
