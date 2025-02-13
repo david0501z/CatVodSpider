@@ -41,19 +41,21 @@ public class Path {
         return mkdir(new File(root() + File.separator + "TV"));
     }
 
-            public static File tvpg() {
-            mkdir(new File(root() + File.separator + "TV"
+    public static File tvpg() 
+    {
+            /*mkdir(new File(root() + File.separator + "TV"
             + File.separator + "pg"+ File.separator + "js"));
             mkdir(new File(root() + File.separator + "TV"
-            + File.separator + "pg"+ File.separator + "lib"));
+            + File.separator + "pg"+ File.separator + "lib"));*/
         return mkdir(new File(root() + File.separator + "TV"+ File.separator + "pg"));
     }
 
-            public static File tvZX() {
-            mkdir(new File(root() + File.separator + "TV"
+    public static File tvZX() 
+    {
+            /*mkdir(new File(root() + File.separator + "TV"
             + File.separator + "ZX"+ File.separator + "json"));
             mkdir(new File(root() + File.separator + "TV"
-            + File.separator + "ZX"+ File.separator + "lib"));
+            + File.separator + "ZX"+ File.separator + "lib"));*/
         return mkdir(new File(root() + File.separator + "TV"+
          File.separator + "ZX"));
     }
