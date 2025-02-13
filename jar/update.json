@@ -1,5 +1,5 @@
 {
-    "spider": "./update.jar",
+    "spider": "https://slink.ltd/https://raw.githubusercontent.com/david0501z/CatVodSpider/main/jar/update.jar",
     "sites": [
         {
             "key": "版本信息",
