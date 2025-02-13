@@ -67,15 +67,19 @@ public class Market extends Spider {
             Response response = OkHttp.newCall(action);
             File file = Path.create(new File(Path.download(), Uri.parse(action).getLastPathSegment()));
             download(file, response.body().byteStream(), Double.parseDouble(response.header("Content-Length", "1")));
-            if (file.getName().endsWith(".zip")&&file.getName().startsWith("pg")) 
-              FileUtil.unzip(file, Path.tvpg());
-           else if (file.getName().endsWith(".zip")&&file.getName().startsWith("真心"))
-             FileUtil.unzip(file, Path.tvZX());
-            else  if (file.getName().endsWith(".zip"))
-             FileUtil.unzip(file, Path.download());
-           else if (file.getName().endsWith(".apk")) FileUtil.openFile(file);
-            else Result.notify("下載完成");
-           file.delete();//都删了需要判断才行
+            if (file.getName().endsWith(".zip"))
+            {
+                if(file.getName().startsWith("pg")) 
+                    FileUtil.unzip(file, Path.tvpg());
+                else if (file.getName().startsWith("真心"))
+                    FileUtil.unzip(file, Path.tvZX());
+                else  
+                    FileUtil.unzip(file, Path.download());
+
+                file.delete();//都删了需要判断才行
+            }
+            else if (file.getName().endsWith(".apk")) FileUtil.openFile(file);
+            else Result.notify("下載完成");           
             checkCopy(action);
             dismiss();
             return "";
