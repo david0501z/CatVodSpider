@@ -30,24 +30,23 @@ jobs:
         run: |
           copy jar\custom_spider.jar jar\update.jar   
 
-      - name: Commit JAR files
+      - name: Commit JAR files to target repository
         run: |
+          # 克隆目标仓库
+          git clone https://${{ secrets.TARGET_REPO_TOKEN }}@github.com/david0501z/davstore.git target-repo
+          cd target-repo
+
+          # 复制生成的 JAR 文件到目标仓库
+          cp -r ../jar/update.jar ./jar/
+
+          # 配置 Git 用户信息
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git pull origin main
-          git add jar/custom_spider.jar jar/custom_spider.jar.md5 jar/update.jar
-          git commit -m 'Update generated custom_spider.jar and custom_spider.jar.md5  jar/update.jar'
-          git push
-       
 
-      - name: Commit JAR files2
-        run: |
-                git remote set-url origin https://github.com/david0501z/davstore.git
-                git config --global user.name 'github-actions[bot]'
-                git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-                git pull origin main
-                git add jar/custom_spider.jar jar/custom_spider.jar.md5 jar/update.jar
-                git commit -m 'Update generated custom_spider.jar and custom_spider.jar.md5  jar/update.jar'
-                git push
-        env:        
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # 提交并推送更改
+          git add jar/
+          git commit -m 'Update generated JAR files'
+          git push origin main
+        env:
+          # 使用 PAT 进行认证
+          GITHUB_TOKEN: ${{ secrets.DAV_SECRET }}
