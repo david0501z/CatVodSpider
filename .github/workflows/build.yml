@@ -34,6 +34,7 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git pull origin main
           git add jar/custom_spider.jar jar/custom_spider.jar.md5 jar/update.jar
           git commit -m 'Update generated custom_spider.jar and custom_spider.jar.md5  jar/update.jar'
           git push
@@ -44,6 +45,7 @@ jobs:
                 git remote set-url origin https://github.com/david0501z/davstore.git
                 git config --global user.name 'github-actions[bot]'
                 git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+                git pull origin main
                 git add jar/custom_spider.jar jar/custom_spider.jar.md5 jar/update.jar
                 git commit -m 'Update generated custom_spider.jar and custom_spider.jar.md5  jar/update.jar'
                 git push
