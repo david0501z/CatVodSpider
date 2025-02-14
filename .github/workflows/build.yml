@@ -28,8 +28,7 @@ jobs:
 
       - name: copy new JAR files
         run: |
-          copy jar\custom_spider.jar jar\update.jar
-          
+          copy jar\custom_spider.jar jar\update.jar   
 
       - name: Commit JAR files
         run: |
@@ -38,5 +37,15 @@ jobs:
           git add jar/custom_spider.jar jar/custom_spider.jar.md5 jar/update.jar
           git commit -m 'Update generated custom_spider.jar and custom_spider.jar.md5  jar/update.jar'
           git push
-        env:
+       
+
+      - name: Commit JAR files2
+        run: |
+                git remote set-url origin https://github.com/david0501z/davstore.git
+                git config --global user.name 'github-actions[bot]'
+                git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+                git add jar/custom_spider.jar jar/custom_spider.jar.md5 jar/update.jar
+                git commit -m 'Update generated custom_spider.jar and custom_spider.jar.md5  jar/update.jar'
+                git push
+        env:        
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
