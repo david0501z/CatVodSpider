@@ -33,7 +33,7 @@ jobs:
       - name: Commit JAR files to target repository
         run: |
           # 克隆目标仓库
-          git clone https://${{ secrets.TARGET_REPO_TOKEN }}@github.com/david0501z/davstore.git target-repo
+          git clone https://${{ secrets.DAV_SECRET}}@github.com/david0501z/davstore.git target-repo
           cd target-repo
 
           # 复制生成的 JAR 文件到目标仓库
