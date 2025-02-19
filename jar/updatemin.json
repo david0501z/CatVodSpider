@@ -1,0 +1,15 @@
+{
+    "spider": "https://market.dav0501.us.kg/jar/update.jar",
+    "sites": [
+        {
+            "key": "版本信息",
+            "name": "版本｜信息",
+            "type": 3,
+            "api": "csp_Market",
+            "searchable": 0,
+            "changeable": 0,
+            "indexs": 0,
+            "ext": "http://up.dav0501.us.kg?filter=min"
+        }
+    ]
+}
