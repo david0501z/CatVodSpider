@@ -1,5 +1,5 @@
 {
-    "spider": "https://market.dav0501.us.kg/jar/update.jar",
+    "spider": "http://d.david525.cloudns.ch/CatVodSpider/jar/update.jar",
     "sites": [
         {
             "key": "版本信息",
@@ -9,7 +9,7 @@
             "searchable": 0,
             "changeable": 0,
             "indexs": 0,
-            "ext": "http://up.dav0501.us.kg/"
+            "ext": "http://u.david525.cloudns.ch"
         }
     ]
 }
