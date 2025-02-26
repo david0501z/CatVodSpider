@@ -47,7 +47,7 @@ public class Path {
             + File.separator + "pg"+ File.separator + "js"));
             mkdir(new File(root() + File.separator + "TV"
             + File.separator + "pg"+ File.separator + "lib"));*/
-        return mkdir(new File(root() + File.separator + "TV"+ File.separator + "pg"));
+        return mkdir(new File(root() + File.separator + "TVBox"+ File.separator + "pg"));
     }
 
     public static File tvZX() 
@@ -56,7 +56,7 @@ public class Path {
             + File.separator + "ZX"+ File.separator + "json"));
             mkdir(new File(root() + File.separator + "TV"
             + File.separator + "ZX"+ File.separator + "lib"));*/
-        return mkdir(new File(root() + File.separator + "TV"+
+        return mkdir(new File(root() + File.separator + "TVBox"+
          File.separator + "ZX"));
     }
 
