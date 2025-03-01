@@ -31,9 +31,17 @@ public class FileUtil {
             while (entries.hasMoreElements()) {
                 ZipEntry entry = (ZipEntry) entries.nextElement();
                 File out = new File(path, entry.getName());
-                if (entry.isDirectory()) out.mkdirs();
-                else Path.copy(zip.getInputStream(entry), out);
-            }
+                 if (entry.isDirectory()) {
+                out.mkdirs(); // 创建文件夹
+            } else {
+                // 确保父目录存在
+                File parent = out.getParentFile();
+                if (parent != null) {
+                    parent.mkdirs();
+                }
+                // 将文件内容复制到目标路径
+                Path.copy(zip.getInputStream(entry), out);
+            }}
         } catch (Exception e) {
             e.printStackTrace();
         }
