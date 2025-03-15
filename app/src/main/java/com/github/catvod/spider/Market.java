@@ -71,7 +71,7 @@ public class Market extends Spider {
             {
                 if(file.getName().startsWith("pg")) 
                     FileUtil.unzip(file, Path.tvpg());
-                else if (file.getName().startsWith("真心"))
+                else if (file.getName().startsWith("真心") || file.getName().startsWith("zx"))
                     FileUtil.unzip(file, Path.tvZX());
                 else if (file.getName().startsWith("TV"))
                     FileUtil.unzip(file, Path.root());
